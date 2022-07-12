@@ -1,0 +1,30 @@
+<div class="header">
+  <div *ngIf="isLoggedIn" class="header__nav">
+    <a
+      class="header__nav__home"
+      routerLink="home"
+      routerLinkActive="active-link"
+    >
+      Home
+    </a>
+    <div>
+      <a *ngIf="!isProf" routerLink="student-courses" routerLinkActive="active-link">
+        My Courses
+      </a>
+      <a *ngIf="isProf" routerLink="students" routerLinkActive="active-link">
+        Students
+      </a>
+      <a *ngIf="isProf" routerLink="courses" routerLinkActive="active-link">
+        Courses
+      </a>
+      <a *ngIf="isLoggedIn" class="nav_list_item">
+         Hello {{user.firstName}} {{user.lastName}}
+        <ul class="nav_list_item_drop">
+          <li routerLink="/edit-profile">Edit Profile</li>
+          <li routerLink="/change-password" > Change My Password </li>
+          <li (click)="onLogOut()" routerLink="/auth">Log Out</li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</div>

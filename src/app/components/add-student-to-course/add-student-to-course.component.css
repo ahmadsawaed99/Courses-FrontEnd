@@ -1,0 +1,19 @@
+.subscribe-popup{
+  position: sticky;
+  width: 30rem;
+  height: 25rem;
+  background-color: white;
+  margin: auto;
+  margin-top: 8rem;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 3fr 3fr 3fr;
+  grid-template-columns: 1fr;
+  padding: 20px;
+}
+/* .header{
+  display: grid;
+  grid-template-columns: 1fr 30fr;
+} */

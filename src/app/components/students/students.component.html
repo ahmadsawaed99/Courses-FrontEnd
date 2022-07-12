@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Students</h1>
+  </div>
+  <div style="margin-left: 9rem;margin-bottom: 1rem;">
+    <button class="btn btn-primary" (click)="onAddStudent()">
+      Add Student
+    </button>
+  </div>
+</div>
+
+
+
+<div class="container tbl">
+  <div>
+    <label for="" style="margin-right: 0.4rem; font-weight: bold;">Search</label>
+    <input type="text" (input)="onSearch($event)">
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">First name </th>
+        <th scope="col">Last name</th>
+        <th scope="col">Adress</th>
+        <th scope="col">Email</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentsToDisplay; let i = index">
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.adress}}</td>
+        <td>{{student.email}}</td>
+        <td><mat-icon class="icon" (click)="onDelete(i)">delete</mat-icon></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-add-student-form *ngIf="isAddingNewStudent" class="add-student" (passStudent)="studentToADD($event)" (onExit)="closeTheForm()"></app-add-student-form>
+
+
+
+
+
+

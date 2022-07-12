@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Courses</h1>
+  </div>
+  <div style="margin-left:9rem ;margin-bottom: 1rem;">
+    <button class="btn btn-primary" (click)="onAddCourse()">
+      Add Course
+    </button>
+  </div>
+</div>
+
+<div class="container tbl">
+  <div>
+    <label for="" style="margin-right: 0.4rem; font-weight: bold;">Search</label>
+    <input type="text" (input)="onSearch($event)">
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col text-center">Course Name</th>
+        <th scope="col text-center ">Starting Date</th>
+        <th scope="col text-center">Ending Date</th>
+        <th scope="col text-center"> Course Students</th>
+        <th scope="col text-center"> Course Classes</th>
+        <th scope="col text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of coursesToDisplay; let i = index">
+        <td>{{course.name}}</td>
+        <td>{{course.startingDate.toDateString()}}</td>
+        <td>{{course.endingDate.toDateString()}}</td>
+        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/course-students/' + course.id">face</mat-icon></td>
+        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/course-classes/' + course.id">assignment</mat-icon></td>
+        <td style="padding-left:0.5rem;"><mat-icon class="icon justify-content-center"(click)="onDelete(i)">delete</mat-icon></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<app-add-course-form class="add-course" *ngIf="isAddingNewCourse" (closeWithoutAdding)="onCloseAddCourseForm()" (passCourse)="AddCourse($event)"></app-add-course-form>

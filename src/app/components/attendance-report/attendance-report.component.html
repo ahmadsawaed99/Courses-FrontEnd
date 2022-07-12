@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Attendance Report</h1>
+  </div>
+  <div style="margin-left: 9rem;margin-bottom: 1rem;">
+
+  </div>
+</div>
+
+
+
+<div class="container tbl">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th>Attendance ?</th>
+        <th>Reason</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of report; let i = index">
+        <td>{{record.student.firstName + ' ' + record.student.lastName}}</td>
+        <td>{{record.student.email}}</td>
+        <td>
+          <mat-icon *ngIf="record.doesAttend">check_circle</mat-icon>
+          <mat-icon *ngIf="!record.doesAttend">highlight_off</mat-icon>
+
+        </td>
+        <td><button class="btn btn-primary" [disabled]="record.doesAttend" (click)="onReason(i)"> See Reason </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="showReason" class="textBox">
+  <div class="reason-popup">
+    <div (click)="onExit()" style="cursor: pointer;"><mat-icon>clear</mat-icon></div>
+    <div class="title"><h1>Reason</h1></div>
+    <div class="text"><h2>{{reason}}</h2></div>
+  </div>
+</div>
+
+
+
+

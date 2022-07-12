@@ -1,0 +1,21 @@
+<div class="subscribe-popup text-center">
+  <div style="text-align: left;" (click)="onClear()">
+    <mat-icon>clear</mat-icon>
+  </div>
+  <div>
+    <h1>Wich Student ?</h1>
+  </div>
+  <div>
+    <mat-form-field appearance="fill" style="width: 80%;">
+    <mat-label>Select Student</mat-label>
+    <mat-select (valueChange)="onChange($event)" [required]="true">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let student of students" [value]="student.id" >{{student.firstName + ' ' + student.lastName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="text-danger" style="margin-top:-0.7rem" *ngIf="requiredError" >You Have To Select Student</div>
+</div>
+  <div>
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</div>
+</div>

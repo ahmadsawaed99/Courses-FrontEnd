@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Classes Of {{Course.name}} Course</h1>
+  </div>
+</div>
+
+<div class="container tbl">
+  <!-- <div>
+    <label for="" style="margin-right: 0.4rem; font-weight: bold;">Search</label>
+    <input type="text">
+  </div> -->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Day</th>
+        <th scope="col">Date</th>
+        <th scope="col">Form Hour</th>
+        <th scope="col">Until Hour</th>
+        <th scope="col">Did You Attend ?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let class of classesModel; let i = index">
+        <td>{{class.day}}</td>
+        <td>{{class.date}}</td>
+        <td>{{class.fromHour}}</td>
+        <td>{{class.untilHour}}</td>
+        <td *ngIf="!class.isStatusUpdated">
+          <button (click)="onYes(i)" class="btn btn-primary" style="margin-right: 1rem;">Yes</button>
+          <button (click)="onNo(i)"  class="btn btn-danger">No</button>
+        </td>
+        <td *ngIf="class.isStatusUpdated" class="attend">
+          <div class="Yes" *ngIf="class.isAttended">
+            YES
+          </div>
+          <div class="No" *ngIf="!class.isAttended">
+            NO
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isAddingReason" class="add-Reason">
+            <div class="subscribe-popup">
+              <div (click)="onExit()" style="width: 100%; margin-top: -4rem; cursor: pointer;">
+                <mat-icon >clear</mat-icon>
+              </div>
+              <h1 style="margin-bottom: 3rem;">Absence Reason</h1>
+              <mat-form-field class="example-full-width" style="width: 90%; height: 50%;" appearance="fill">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput [(ngModel)]="reasonForAbseance" placeholder="Ex. It makes me feel..."></textarea>
+              </mat-form-field>
+              <button (click)="onSumitReason()" class="btn btn-primary">Submit</button>
+            </div>
+          </div>

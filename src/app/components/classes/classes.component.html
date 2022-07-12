@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Classes Of {{Course.name}} Course</h1>
+  </div>
+</div>
+
+<div class="container tbl">
+  <!-- <div>
+    <label for="" style="margin-right: 0.4rem; font-weight: bold;">Search</label>
+    <input type="text">
+  </div> -->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Day</th>
+        <th scope="col">Date</th>
+        <th scope="col">Form Hour</th>
+        <th scope="col">Until Hour</th>
+        <th scope="col">Attendance Report</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let class of classesModel; let i = index">
+        <td>{{class.day}}</td>
+        <td>{{class.date}}</td>
+        <td>{{class.fromHour}}</td>
+        <td>{{class.untilHour}}</td>
+        <td><mat-icon class="icon" [routerLink]="'/class-report/' + class.id" >contacts</mat-icon></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
