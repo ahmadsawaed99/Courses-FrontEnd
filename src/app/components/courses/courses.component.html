@@ -30,8 +30,8 @@
         <td>{{course.name}}</td>
         <td>{{course.startingDate.toDateString()}}</td>
         <td>{{course.endingDate.toDateString()}}</td>
-        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/course-students/' + course.id">face</mat-icon></td>
-        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/course-classes/' + course.id">assignment</mat-icon></td>
+        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/course/'+ course.id +'/students'">face</mat-icon></td>
+        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/course/' + course.id + '/classes'">assignment</mat-icon></td>
         <td style="padding-left:0.5rem;"><mat-icon class="icon justify-content-center"(click)="onDelete(i)">delete</mat-icon></td>
       </tr>
     </tbody>

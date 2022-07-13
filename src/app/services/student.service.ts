@@ -35,7 +35,6 @@ export class StudentService {
     .pipe(catchError(this.handleError))
   }
   getStudents(){
-    console.log(this.api)
     return this.http.get<Array<student>>('https://localhost:5001/api/students')
     .pipe(
       map(res => {

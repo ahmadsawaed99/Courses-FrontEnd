@@ -36,7 +36,6 @@ export class AuthComponent implements OnInit {
   }
   onSubmit(){
     this.authService.login(this.LogInForm.get('email').value,this.LogInForm.get('password').value).subscribe((res :authResponse)  => {
-      console.log(res)
       this.response.token = res.token
       this.response.userRoles = res.userRoles
       this.response.userId = res.userId

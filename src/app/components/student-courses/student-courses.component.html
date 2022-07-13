@@ -23,7 +23,7 @@
         <td>{{course.name}}</td>
         <td>{{course.startingDate.toDateString()}}</td>
         <td>{{course.endingDate.toDateString()}}</td>
-        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/student-classes/' + course.id">assignment</mat-icon></td>
+        <td style="padding-left:2rem;"><mat-icon class="icon justify-content-center" [routerLink]="'/student/course/' + course.id + '/classes'">assignment</mat-icon></td>
       </tr>
     </tbody>
   </table>

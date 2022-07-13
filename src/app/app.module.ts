@@ -24,8 +24,10 @@ import { DatePipe } from '@angular/common';
 import { AttendanceReportComponent } from './components/attendance-report/attendance-report.component';
 import { AuthComponent } from './auth/auth/auth.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { StudentCoursesComponent } from './components/student-courses/student-courses.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AuthGuard } from './services/auth.guard';
+import { StudentsClassesComponent } from './components/students-classes/students-classes.component';
 import { EditProfileComponent } from './forms/edit-profile/edit-profile.component';
 import { ChangePasswordComponent } from './forms/change-password/change-password.component';
 
@@ -48,7 +50,9 @@ import { ChangePasswordComponent } from './forms/change-password/change-password
     ClassesComponent,
     AttendanceReportComponent,
     AuthComponent,
+    StudentCoursesComponent,
     PageNotFoundComponent,
+    StudentsClassesComponent,
     EditProfileComponent,
     ChangePasswordComponent
 

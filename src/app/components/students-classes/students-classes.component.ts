@@ -36,7 +36,6 @@ export class StudentsClassesComponent implements OnInit {
       this.courseId = Number.parseInt(params.get('id'))
       this.classService.getStudentCourseClasses(this.courseId,this.userId).subscribe(res =>{
         this.classesModel = res;
-        console.log(res)
       })
 
       this.courseService.getCourse(Number.parseInt(params.get('id'))).subscribe(res => {

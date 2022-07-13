@@ -20,16 +20,16 @@ import { ChangePasswordComponent } from './forms/change-password/change-password
 
 const routes: Routes = [
   { path: 'students', component: StudentsComponent , resolve : {students : UserResolver} , canActivate:[AuthGuard]},
-  { path: 'edit-profile', component: EditProfileComponent ,resolve : { user : ProfileResolver} ,canActivate:[AuthGuard]},
-  { path: 'change-password', component: ChangePasswordComponent,canActivate:[AuthGuard]},
+  { path: 'user/edit', component: EditProfileComponent ,resolve : { user : ProfileResolver} ,canActivate:[AuthGuard]},
+  { path: 'user/change-password', component: ChangePasswordComponent,canActivate:[AuthGuard]},
   { path: 'courses', component: CoursesComponent , resolve :{courses : CoursesResolver}, canActivate:[AuthGuard]},
-  { path: 'course-students/:id', component: CourseStudentsComponent , canActivate:[AuthGuard]},
-  { path: 'course-classes/:id', component: ClassesComponent , canActivate:[AuthGuard]},
-  { path: 'class-report/:id', component: AttendanceReportComponent , canActivate:[AuthGuard]},
-  { path: 'auth', component: AuthComponent},
-  { path: 'student-courses', component: StudentCoursesComponent , canActivate:[AuthGuard]},
+  { path: 'course/:id/students', component: CourseStudentsComponent , canActivate:[AuthGuard]},
+  { path: 'course/:id/classes', component: ClassesComponent , canActivate:[AuthGuard]},
+  { path: 'class/:id/attendance-report', component: AttendanceReportComponent , canActivate:[AuthGuard]},
+  { path: 'login', component: AuthComponent},
+  { path: 'user/courses', component: StudentCoursesComponent , canActivate:[AuthGuard]},
   {path: 'home' , component:HomeComponent , canActivate:[AuthGuard]},
-  {path: 'student-classes/:id' , component:StudentsClassesComponent , canActivate:[AuthGuard]},
+  {path: 'student/course/:id/classes' , component:StudentsClassesComponent , canActivate:[AuthGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

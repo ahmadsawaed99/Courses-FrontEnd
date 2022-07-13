@@ -8,7 +8,7 @@
       Home
     </a>
     <div>
-      <a *ngIf="!isProf" routerLink="student-courses" routerLinkActive="active-link">
+      <a *ngIf="!isProf" routerLink="user/courses" routerLinkActive="active-link">
         My Courses
       </a>
       <a *ngIf="isProf" routerLink="students" routerLinkActive="active-link">
@@ -20,9 +20,9 @@
       <a *ngIf="isLoggedIn" class="nav_list_item">
          Hello {{user.firstName}} {{user.lastName}}
         <ul class="nav_list_item_drop">
-          <li routerLink="/edit-profile">Edit Profile</li>
-          <li routerLink="/change-password" > Change My Password </li>
-          <li (click)="onLogOut()" routerLink="/auth">Log Out</li>
+          <li routerLink="/user/edit">Edit Profile</li>
+          <li routerLink="/user/change-password" > Change My Password </li>
+          <li (click)="onLogOut()" routerLink="/login">Log Out</li>
         </ul>
       </a>
     </div>
